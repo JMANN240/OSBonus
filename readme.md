@@ -2,10 +2,10 @@
 
 This repository stores a C++ implementation of the producer consumer problem using semaphores and IPC with shared memory. The files can be compiled as follows:
 
-`
+```
 gcc producer.cpp -pthread -lrt -o producer
 gcc consumer.cpp -pthread -lrt -o consumer
-`
+```
 
 The compiled binaries can be run with the line:
 
