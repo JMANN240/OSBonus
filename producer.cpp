@@ -1,13 +1,9 @@
-#include <iostream> 
 #include <sys/ipc.h> 
 #include <sys/shm.h> 
-#include <fcntl.h>           /* For O_* constants */
-#include <sys/stat.h>        /* For mode constants */
+#include <fcntl.h>
 #include <semaphore.h>
 #include <unistd.h>
-#include <stdio.h> 
-#include <cstring>
-using namespace std; 
+#include <stdio.h>
 
 #define MAX_ITEMS 2
 
@@ -31,7 +27,6 @@ int main()
         shmem->table[shmem->counter] = newInt;
         sem_post(sem);
         shmem->counter++;
-        std::cout << shmem->counter << std::endl;
         usleep(1000000);
     }
     return 0; 

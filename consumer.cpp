@@ -1,4 +1,3 @@
-#include <iostream> 
 #include <sys/ipc.h> 
 #include <sys/shm.h> 
 #include <stdio.h> 
@@ -6,7 +5,6 @@
 #include <fcntl.h>
 #include <sys/stat.h>
 #include <semaphore.h>
-using namespace std; 
 
 #define MAX_ITEMS 2
 
@@ -29,10 +27,7 @@ int main()
         shmem->table[shmem->counter] = 0;
         sem_post(sem);
         shmem->counter--;
-        std::cout << shmem->counter << std::endl;
         usleep(1000000);
     }
-    shmdt(shmem);
-    shmctl(shmid,IPC_RMID,NULL); 
     return 0; 
 } 
